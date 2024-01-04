@@ -1,0 +1,18 @@
+public class Main {
+    public static void main(String[] args) {
+        String s1 = "MADAM";
+        StringBuilder reversed = new StringBuilder();
+
+        for (int i = s1.length() - 1; i >= 0; i--) {
+            reversed.append(s1.charAt(i));
+        }
+
+        String s2 = reversed.toString();
+
+        if (s1.equals(s2)) {
+            System.out.print("Palindrome");
+        } else {
+            System.out.print("Not palindrome");
+        }
+    }
+}
