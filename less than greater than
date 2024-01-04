@@ -1,0 +1,15 @@
+class mat{
+  public static void main(String []args){
+    int x=10;
+    int y=20;
+    
+    if(x+y>100)
+    {
+      System.out.print("X and Y is greater than 100");
+    }
+    else
+    {
+      System.out.print("X and Y is less than 100");
+    }
+  }
+}
