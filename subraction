@@ -1,0 +1,16 @@
+public class Example{
+  public int subtraction(int x, int y){
+    return x-y;
+  }
+  
+  public static void main(String [] args){
+    int A=10;
+    int B=2;
+    
+    Example obj=new Example();
+    
+    int outcome = obj.subtraction(A,B);
+    
+    System.out.println("Outcome :"+ outcome);
+  }
+}
