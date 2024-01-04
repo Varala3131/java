@@ -1,0 +1,15 @@
+public class DivisionExample {
+
+    public static void main(String[] args) {
+
+        int dividend = 20;
+        int divisor = 5;
+
+        if (divisor != 0) {
+            int quotient = dividend / divisor;
+            System.out.println("Quotient:" + quotient);
+        } else {
+            System.out.println("Cannot divide by zero");
+        }
+    }
+}
