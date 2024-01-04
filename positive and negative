@@ -1,0 +1,20 @@
+class student{
+  public static void main(String[]args){
+    int x=0;
+    
+    if(x==0)
+    {
+      System.out.print("Number is Zero");
+    }
+    
+    else if(x>0)
+    {
+      System.out.print("Number is positive");
+    }
+    
+    else
+    {
+      System.out.print("Number is negative");
+    }
+  }
+}
