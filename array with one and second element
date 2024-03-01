@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the lower range: ");
+        int lowerBound = scanner.nextInt();
+        System.out.print("Enter the upper range: ");
+        int upperBound = scanner.nextInt();
+        
+        if (upperBound < lowerBound) {
+            System.out.println("Upper bound cannot be less than lower bound.");
+            return;
+        }
+        
+        int size = upperBound - lowerBound + 1;
+        int[][] resultArray = new int[size][2];
+        
+        for (int i = 0; i < size; i++) {
+            int number = lowerBound + i;
+            resultArray[i][0] = number;
+            resultArray[i][1] = number * number;
+        }  
+        
+        System.out.print("[");
+        
+        for (int i = 0; i < size; i++) {
+            System.out.print("(" + resultArray[i][0] + "," + resultArray[i][1] + ")");
+            
+            if (i < size - 1) {
+                System.out.print(",");
+            }
+        }
+        
+        System.out.println("]");
+    }
+}
