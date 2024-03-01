@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class SumCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Enter the lower bound: ");
+        int lowerBound = scanner.nextInt();
+
+  
+        System.out.print("Enter the upper bound: ");
+        int upperBound = scanner.nextInt();
+
+        
+        int sum = 0;
+        for (int i = lowerBound; i <= upperBound; i++) {
+            sum += i;
+        }
+
+        
+        System.out.println("The sum of integers from " + lowerBound + " to " + upperBound + " is: " + sum);
+    }
+}
