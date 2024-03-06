@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class BinaryConversion {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a binary number: ");
+        String binary = scanner.nextLine();
+        scanner.close();
+
+        int decimal = binaryToDecimal(binary);
+        System.out.println("Decimal equivalent: " + decimal);
+
+        String octal = decimalToOctal(decimal);
+        System.out.println("Octal equivalent: " + octal);
+    }
+
+    public static int binaryToDecimal(String binary) {
+        int decimal = 0;
+        int power = 0;
+
+        for (int i = binary.length() - 1; i >= 0; i--) {
+            int digit = Character.getNumericValue(binary.charAt(i));
+            decimal += digit * Math.pow(2, power);
+            power++;
+        }
+
+        return decimal;
+    }
+
+    public static String decimalToOctal(int decimal) {
+        StringBuilder octal = new StringBuilder();
+
+        while (decimal > 0) {
+            int remainder = decimal % 8;
+            octal.insert(0, remainder);
+            decimal /= 8;
+        }
+
+        return octal.toString();
+    }
+}
