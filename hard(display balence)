@@ -1,0 +1,13 @@
+ public class DisplayBalance {
+    // Assume balance is stored as a variable
+    private static double balance = 1000.0;
+
+    public static void main(String[] args) {
+        displayBalance();
+    }
+
+    public static void displayBalance() {
+        // Display the current balance
+        System.out.println("Your current balance is: $" + balance);
+    }
+}
