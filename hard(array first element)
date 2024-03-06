@@ -1,0 +1,9 @@
+ public class FirstElementArray {
+    public static void main(String[] args) {
+        // Create an array with the first element
+        int[] array = {42}; // You can change the value as per your requirement
+        
+        // Print the first element
+        System.out.println("First element of the array: " + array[0]);
+    }
+}
