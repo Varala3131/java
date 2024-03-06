@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class ReadNumbersUntilA {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter numbers (enter 'a' to stop):");
+        while (true) {
+            String input = scanner.next();
+            if (input.equals("a")) {
+                System.out.println("Encountered 'a'. Program stopped.");
+                break;
+            }
+            try {
+                int num = Integer.parseInt(input);
+                // Process the number (you can perform any operations here)
+                System.out.println("You entered: " + num);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number or 'a'.");
+            }
+        }
+
+        scanner.close();
+    }
+}
