@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class ReadNumbersUntilOne {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter numbers (enter 1 to stop):");
+        int num;
+        while ((num = scanner.nextInt()) != 1) {
+            // Process the number (you can perform any operations here)
+            System.out.println("You entered: " + num);
+        }
+
+        System.out.println("Encountered 1. Program stopped.");
+        scanner.close();
+    }
+}
