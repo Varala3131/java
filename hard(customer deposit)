@@ -1,0 +1,53 @@
+ import java.util.Scanner;
+
+public class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit of $" + amount + " successful.");
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawal of $" + amount + " successful.");
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient funds.");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter initial balance: ");
+        double initialBalance = scanner.nextDouble();
+
+        BankAccount account = new BankAccount(initialBalance);
+
+        // Perform deposit
+        System.out.print("Enter deposit amount: ");
+        double depositAmount = scanner.nextDouble();
+        account.deposit(depositAmount);
+        System.out.println("Current balance: $" + account.getBalance());
+
+        // Perform withdrawal
+        System.out.print("Enter withdrawal amount: ");
+        double withdrawAmount = scanner.nextDouble();
+        account.withdraw(withdrawAmount);
+        System.out.println("Current balance: $" + account.getBalance());
+
+        scanner.close();
+    }
+}
