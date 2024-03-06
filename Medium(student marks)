@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class StudentMarks {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of students: ");
+        int numStudents = scanner.nextInt();
+
+        int[] marks = new int[numStudents];
+
+        // Input marks of students
+        for (int i = 0; i < numStudents; i++) {
+            System.out.print("Enter marks for student " + (i + 1) + ": ");
+            marks[i] = scanner.nextInt();
+        }
+
+        scanner.close();
+
+        // Calculate average, highest, and lowest marks
+        int totalMarks = 0;
+        int highestMark = marks[0];
+        int lowestMark = marks[0];
+
+        for (int mark : marks) {
+            totalMarks += mark;
+
+            if (mark > highestMark) {
+                highestMark = mark;
+            }
+
+            if (mark < lowestMark) {
+                lowestMark = mark;
+            }
+        }
+
+        double averageMarks = (double) totalMarks / numStudents;
+
+        // Output results
+        System.out.println("Average marks: " + averageMarks);
+        System.out.println("Highest marks: " + highestMark);
+        System.out.println("Lowest marks: " + lowestMark);
+    }
+}
