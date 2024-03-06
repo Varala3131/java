@@ -1,0 +1,32 @@
+import java.util.HashMap;
+import java.util.Map;
+
+class Bank {
+    private static final Map<String, Double> interestRates = new HashMap<>();
+
+    static {
+        interestRates.put("SBI", 8.4);
+        interestRates.put("ICICI", 7.3);
+        interestRates.put("AXIS", 9.7);
+    }
+
+    public static double getInterestRate(String bankName) {
+        if (bankName == null || bankName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Bank name cannot be null or empty");
+        }
+
+        return interestRates.getOrDefault(bankName.toUpperCase(), 0.0);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            String bankName = "SBI";
+            double interestRate = Bank.getInterestRate(bankName);
+            System.out.println("Interest rate for " + bankName + " is " + interestRate + "%");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
